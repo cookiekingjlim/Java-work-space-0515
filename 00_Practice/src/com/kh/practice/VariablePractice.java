@@ -11,9 +11,11 @@ public class VariablePractice {
 		
 		VariablePractice vp = new VariablePractice();
 //		vp.method1();
-//		vp.method2();
+		vp.method2();
 //		vp.method3();
-		vp.method4();
+//		vp.method4();
+//		vp.method5();
+//		vp.method6();
 	}
 	
 	public void method1() {
@@ -41,7 +43,7 @@ public class VariablePractice {
 		
 		System.out.println("영화관의 요금표는 다음과 같습니다.");
 		
-		System.out.print("성인 요금 : "); //여기에 ~원을 넣고 싶은데 어떻게 넣지...?
+		System.out.print("성인 요금 : " + "원"); //여기에 ~원을 넣고 싶은데 어떻게 넣지...?
 		int num1 = sc.nextInt();
 		
 		System.out.print("청소년 요금 : ");
@@ -54,7 +56,7 @@ public class VariablePractice {
 	}
 	
 
-	public void method3() {
+	public void method3() { //다른 임시변수 만들어서 사용할 수 있음. 나중에 연습해봐
 		int x = 5;
 		int y = 7;
 		int z = 9;
@@ -78,16 +80,46 @@ public class VariablePractice {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("문자열을 입력하세요 : "); 
-		sc.next();
+		System.out.print("문자열을 입력하세요 : "); 
+		String str = sc.nextLine();
+		char ch1 = str.charAt(0);
+		System.out.println("첫번째 문자 : " + ch1);
+		char ch2 = str.charAt(7);
+		System.out.println("마지막 문자 : " + ch2);
 		
-		System.out.print("첫번째 문자 : ");
-		char c1 = '';
-		char c2 = '';
-		c1 = sc.nextLine.charAt(0);
-		char computer = line.charAt(0);
+		//쌤 이거 우당탕탕 얼레벌레 돌아가기는 하는데...이해를 기반으로 푼 게 아니라 이것저것 다 집어넣다 보니까 어떻게 비슷하게 나왔어요..ㅎ..
 		
-		// 이렇게 하는 게 맞나..? 쌤 제가 문제 의도를 제대로 읽은 게 맞나요... 막.. computer에 c위치 지정하고 그런 거 아니죠..? 
+	}
+	
+	public void method5() { //입력받은 값을 이용하는 것
+		Scanner sc = new Scanner(System.in);
+		
+//		System.out.print("문자 : ");
+//		String str = sc.next();
+//		int num1 = 'A';
+//		System.out.println("A unicode : " + num1);
+//		int num2 = 'B';
+//		System.out.println("B unicode : " + num2);
+		
+		System.out.print("문자 : ");
+		char ch = sc.next();
+	}
+	
+	public void method6() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("국어 : ");
+		double num1 = sc.nextInt();
+		System.out.print("영어 : ");
+		double num2 = sc.nextInt();
+		System.out.print("수학 : ");
+		double num3 = sc.nextInt();
+		
+		double result1 = num1+num2+num3;
+		System.out.printf("총점 : " + "%.0f\n", result1);
+		
+		double result2 = result1/3;
+		System.out.printf("평균 : " + "%.2f", result2);
 	}
 	
 }

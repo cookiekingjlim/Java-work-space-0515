@@ -10,7 +10,7 @@ public class E_Logical {
 	 * - 논리 연산한 결과마저도 논리값임!!
 	 * 
 	 * 논리값 && 논리값 : (and, 그리고) 왼쪽, 오른쪽 둘 다 true일 경우 결과값은 true
-	 * 논리값 || 논리값 : (or, 또는) 왼쪽, 오른쪽 둘 중 하나라도 true일 경우 결과값은 true // 나 이거 기호 다시 
+	 * 논리값 || 논리값 : (or, 또는) 왼쪽, 오른쪽 둘 중 하나라도 true일 경우 결과값은 true 
 	 * 
 	 * */
 		public static void main(String[] args) {

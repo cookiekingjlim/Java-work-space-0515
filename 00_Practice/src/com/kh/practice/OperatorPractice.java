@@ -66,7 +66,7 @@ public class OperatorPractice {
 		
 	}
 	
-	public void method5() {
+	public void method5() { // num > 13은 불필요한 코드 조건문 배우고 코드 체크
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("나이 : ");
@@ -76,7 +76,7 @@ public class OperatorPractice {
 	
 	}
 	
-	public void method6() {
+	public void method6() { // 이렇게 되면 사과가 100개, 바구니의 개수가 10개일 때 답이 잘못될거에요!
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("사과의 개수 : ");
