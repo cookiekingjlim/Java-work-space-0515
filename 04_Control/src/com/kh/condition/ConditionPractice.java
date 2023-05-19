@@ -4,15 +4,19 @@ import java.util.Scanner;
 
 public class ConditionPractice {
 	Scanner sc = new Scanner(System.in);
-
+	
 	public static void main(String[] args) {
-		ConditionPractice cp = new ConditionPractice();
-//		cp.practice1();
-//		cp.practice2();
-//		cp.practice3(); //이거 다시 풀어야해
-		cp.practice4();
-	}
-
+	ConditionPractice cp = new ConditionPractice();
+//	cp.practice1();
+//	cp.practice2();
+//	cp.practice3();
+//	cp.practice4();
+//	cp.practice5();
+//	cp.practice6();
+//	cp.practice7();
+	cp.practice8();
+	
+}
     /*
        키보드로 정수를 입력 받은 정수가 양수이면서 짝수일 때만 “짝수다”를 출력하고
        짝수가 아니면 “홀수다“를 출력하세요.
@@ -22,17 +26,16 @@ public class ConditionPractice {
        양수만 입력해주세요.
      */
     public void practice1() {
-    		System.out.print("정수 : ");
-    		int num = sc.nextInt();
-
-    		if (num % 2 == 0 && num >= 0) {
-    			System.out.println("짝수다");
-    		} else if (!(num % 2 == 0) && num >= 0) {
-    			System.out.println("홀수다");
-    		} else {
-    			System.out.println("양수만 입력해주세요.");
-    		}
+        System.out.print("숫자를 한 개 입력하세요 : ");
+        int num = sc.nextInt();
         
+        if(num > 0 && (num % 2 == 0)) {
+        	 System.out.print("짝수다");
+        } else if (num > 0 && (num % 2 == 1)) {
+        	System.out.print("홀수다");
+        } else {
+        	System.out.print("양수만 입력해주세요.");
+        }
     }
 
     /*
@@ -47,17 +50,30 @@ public class ConditionPractice {
         1
      */
     public void practice2() {
-		System.out.print("정수1 : ");
-		int num1 = sc.nextInt();
-		System.out.print("정수2 : ");
-		int num2 = sc.nextInt();
-
-		if (num1 == num2) {
-			System.out.println("1");
-		} else {
-			System.out.println("-1");
-		}
-    }
+    	
+    	int num1 = 2;
+    	int num2 = 3;
+    	System.out.println("num1 : " + num1);
+		System.out.println("num2 : " + num2);
+	
+		 if(num1 == num2) {
+            System.out.println("1");
+        } else if(num1 != num2) {
+        	System.out.println("-1");
+        }
+    		
+		final int NUM1 = 11;
+		final int NUM2 = 11;
+		System.out.println("num1 : " + NUM1);
+		System.out.println("num2 : " + NUM2);
+		
+		 if(NUM1 == NUM2) {
+	            System.out.println("1");
+	        } else if(NUM1 != NUM2) {
+	        	System.out.println("-1");
+	        }
+    	}
+        
 
     /*
         A 피자가게는 피자를 두 조각에서 열 조각까지 원하는 조각 수로 잘라준다.
@@ -70,10 +86,19 @@ public class ConditionPractice {
 
      */
     public void practice3() {
-  
+    	System.out.print("피자 조각 수 : " );
+    	int num1 = sc.nextInt();
         
-    }
-
+    	System.out.print("피자 먹는 사람 수 : " );
+    	int num2 = sc.nextInt();
+    	
+    	int num3 = num2/num1;
+    	if(num1 <= 10) {
+    		System.out.print(++num3);
+    	}
+   	}
+    
+    
     /*
         국어, 영어, 수학 세 과목의 점수를 키보드로 입력 받고 합계와 평균을 계산하고
         합계와 평균을 이용하여 합격 / 불합격 처리하는 기능을 구현하세요.
@@ -97,23 +122,23 @@ public class ConditionPractice {
         축하합니다, 합격입니다!
      */
     public void practice4() {
-		System.out.print("국어 : ");
-		int num1 = sc.nextInt();
-		System.out.print("영어 : ");
-		int num2 = sc.nextInt();
-		System.out.print("수학 : ");
-		int num3 = sc.nextInt();
-		
-		System.out.println("합계 : " + (num1+num2+num3));
-		System.out.printf("%1.f\t", (num1+num2+num3)/3);
-		
-		if((num1 >= 40 && num2 >= 40 && num3 >= 40 ) && ((num1+num2+num3)/3) >= 60) {
-			System.out.print("축하합니다, 합격입니다!");
-		}
-		
-		}
-		
-
+    	System.out.print("국어점수 : " );
+    	int num1 = sc.nextInt();
+    	System.out.print("수학점수 : " );
+    	int num2 = sc.nextInt();
+    	System.out.print("영어점수 : " );
+    	int num3 = sc.nextInt();
+    	
+    	double dnum = num1 + num2 + num3;
+    	if((num1 >= 40 && num2 >= 40 && num3 >= 40) && (dnum/3 >= 60)) {
+        	System.out.println("합계 : " + (num1+num2+num3));
+        	System.out.println("평균 : " + dnum/3);
+        	System.out.println("축하합니다, 합격입니다!" );
+    	} else {
+    		System.out.println("불합격입니다.");
+    	}
+  
+    }
 
     /*
         B 옷가게는 10만 원 이상 사면 5%, 30만 원 이상 사면 10%, 50만원 이상 사면 20%를 할인해준다.
@@ -123,6 +148,18 @@ public class ConditionPractice {
         464,000
      */
     public void practice5() {
+    	System.out.print("구매한 옷 가격 : ");
+    	int num = sc.nextInt();
+    	if(num < 300000) {
+        	System.out.println("지불할 옷 가격 : " + num*0.95);
+    	} else if(num < 500000) {
+            System.out.println("지불할 옷 가격 : " + num*0.9);
+        } else if(num >= 500000) {
+            System.out.println("지불할 옷 가격 : " + num*0.8);
+        }
+        
+    	
+    	//쌤 지불할 옷 가격의 소수점 어떻게 해야 없앨 수 있을까요ㅜㅜ...
 
     }
 
@@ -132,7 +169,18 @@ public class ConditionPractice {
         입력받은 각에 따라 예각일 때 1, 직각일 때 2, 둔각일 때 3, 평각일 때 4를 출력하세요.
      */
     public void practice6() {
-
+    	System.out.print("각을 입력하시오 : ");
+    	int num = sc.nextInt();
+    	
+    	if(num<90) {
+    		System.out.println("예각 : 1");
+    	} else if(num == 90) {
+    		System.out.println("직각 : 2");
+    	} else if(num > 180) {
+    		System.out.println("둔각 : 3");
+    	} else if(num == 180) {
+    		System.out.println("평각 : 4");
+    	}
     }
 
 
@@ -155,8 +203,27 @@ public class ConditionPractice {
       아이디가 틀렸습니다.
     */
     public void practice7() {
- 
-    }
+    	String id = "";
+    	int pw = 0;
+    	
+    	System.out.print("아이디 : ");
+    	id = sc.nextLine();
+    	System.out.print("비밀번호 : ");
+    	pw = sc.nextInt();
+    	
+    	if("happy".equals(id) && pw == 1234) {
+    		System.out.println("로그인 성공!");
+    	}
+    	if(!"happy".equals(id)&& pw == 1234) {
+    		System.out.println("아이디가 틀렸습니다.");
+    	}
+    	if("happy".equals(id) && pw != 1234) {
+    		System.out.println("비밀번호가 틀렸습니다.");
+    	}
+    	if(!"happy".equals(id) && pw != 1234) {
+    		System.out.println("아이디와 비밀번호를 다시 확인해주십시오.");
+    	}
+  }
 
     /*
         키, 몸무게를 double로 입력 받고 BMI지수를 계산하여 계산 결과에 따라
@@ -173,7 +240,32 @@ public class ConditionPractice {
 
      */
     public void practice8() {
-       
+    	double height = 0;
+    	double weight = 0;
+    	double bmi = 0;
+    	
+    	System.out.print("키(m)를 입력해 주세요 : ");
+    	height = sc.nextDouble();
+    	System.out.print("몸무게(kg)를 입력해 주세요 : ");
+    	weight = sc.nextDouble();
+    	
+    	bmi = weight / (height * height);
+    	System.out.println("BMI 지수 : " + bmi);
+    	
+    	if(bmi < 18.5) {
+    		System.out.println("저체중");
+    	} else if (bmi < 23 ) {
+    		System.out.println("정상 체중");
+    	} else if (bmi < 25) {
+    		System.out.println("과체중");
+    	} else if (bmi < 30) {
+    		System.out.println("비만");
+    	} else if (bmi >= 30) {
+    		System.out.println("고도 비만");
+    	} 
+    	
+ 
+    	
     }
 
     /*
@@ -188,6 +280,8 @@ public class ConditionPractice {
 
      */
     public void practice9() {
+    	
+    	
 
     }
 
