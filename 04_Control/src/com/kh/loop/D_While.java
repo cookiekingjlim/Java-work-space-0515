@@ -107,16 +107,24 @@ public class D_While {
 		 * 3번 만에 맞췄습니다. 출력
 		 * */
 		
+
+
+		while(true) {
+		int input = 0;
 		System.out.print("1과 100 사이의 값 입력 > ");
-		int num1 = sc.nextInt();
-		
+		input = sc.nextInt();
+			
 		double random = Math.random();
 		random = Math.random() * 100;
 		int num2 = (int) random;
-		System.out.println(num2);
+		System.out.println("랜덤값 : " + num2);
 		
-		for(int i = 1; i <= 100; i++) {
-//			if()
+			if(input<num2) {
+				System.out.println("더 큰 수를 입력하세요!");
+			} else if(input>num2) {
+				System.out.println("더 작은 수를 입력하세요!");
+			}
+			
 		}
 		
 	}
