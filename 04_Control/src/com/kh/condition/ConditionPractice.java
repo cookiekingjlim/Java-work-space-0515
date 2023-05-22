@@ -14,7 +14,10 @@ public class ConditionPractice {
 //	cp.practice5();
 //	cp.practice6();
 //	cp.practice7();
-	cp.practice8();
+//	cp.practice8();
+//	cp.practice9();
+//	cp.practice10();
+	cp.practice11();
 	
 }
     /*
@@ -29,7 +32,7 @@ public class ConditionPractice {
         System.out.print("숫자를 한 개 입력하세요 : ");
         int num = sc.nextInt();
         
-        if(num > 0 && (num % 2 == 0)) {
+        if(num > 0 && (num % 2 == 0)) { // num > 0 공통적으로 들어가는 부분 중첩 if문으로 바깥으로 뺄 수 있어요!
         	 System.out.print("짝수다");
         } else if (num > 0 && (num % 2 == 1)) {
         	System.out.print("홀수다");
@@ -51,6 +54,11 @@ public class ConditionPractice {
      */
     public void practice2() {
     	
+    	// 문제에 처음보는 단어인 매개변수... 제가 코딩테스트 문제 중에도 참고한 게 있는데..
+    	// 이 부분을 가져오면서 실수로 이 단어를 그대로 사용해서 혼란이 있었을 것 같아요 ㅠㅠ
+    	// 참고로 매개변수는 객체 - 메소드 설명할 때 자세히 다루게 될 예정이구요!
+    	// 사실 이 문제는 두 정수 값을 받아서 일치하면 1 다르면 -1을 출력하는 문제입니다!
+    	
     	int num1 = 2;
     	int num2 = 3;
     	System.out.println("num1 : " + num1);
@@ -62,6 +70,7 @@ public class ConditionPractice {
         	System.out.println("-1");
         }
     		
+		 // 요 아래 코드는 필요 없어요~ 지우님!
 		final int NUM1 = 11;
 		final int NUM2 = 11;
 		System.out.println("num1 : " + NUM1);
@@ -92,7 +101,9 @@ public class ConditionPractice {
     	System.out.print("피자 먹는 사람 수 : " );
     	int num2 = sc.nextInt();
     	
-    	int num3 = num2/num1;
+    	int num3 = num2/num1; // 여기까지는 OK~~
+    	
+    	// 여러가지 예시를 생각해보세요! 위에 예시 말고 피자 조각 수가 4조각인데, 사람 수는 8명일 때 등등!
     	if(num1 <= 10) {
     		System.out.print(++num3);
     	}
@@ -150,7 +161,7 @@ public class ConditionPractice {
     public void practice5() {
     	System.out.print("구매한 옷 가격 : ");
     	int num = sc.nextInt();
-    	if(num < 300000) {
+    	if(num < 300000) { // 조건이 하나 빠졌어요! 10만 원 미만인 경우는 금액 그대로!
         	System.out.println("지불할 옷 가격 : " + num*0.95);
     	} else if(num < 500000) {
             System.out.println("지불할 옷 가격 : " + num*0.9);
@@ -160,6 +171,7 @@ public class ConditionPractice {
         
     	
     	//쌤 지불할 옷 가격의 소수점 어떻게 해야 없앨 수 있을까요ㅜㅜ...
+    	// --> 없애는 방법은 2가지! 하나는 printf를 사용해보는 것이고, 하나는 int로 형변환 하는 방법이 있습니다 :)
 
     }
 
@@ -211,6 +223,7 @@ public class ConditionPractice {
     	System.out.print("비밀번호 : ");
     	pw = sc.nextInt();
     	
+    	// 조건식에서 자꾸만 공통적으로 쓰게 되는 부분들 작성하고 보니 보이죠? 그럴때 중첩 if문을 써서 바깥으로 빼보세요!
     	if("happy".equals(id) && pw == 1234) {
     		System.out.println("로그인 성공!");
     	}
@@ -280,10 +293,35 @@ public class ConditionPractice {
 
      */
     public void practice9() {
-    	
-    	
 
+    	System.out.print("피연산자1 입력 : ");
+    	int num1 = sc.nextInt();
+    	System.out.print("피연산자2 입력 : ");
+    	int num2 = sc.nextInt();
+    	System.out.print("연산자를 입력(+,-,*,/,%) : ");
+    	String sign = sc.next();
+    	
+    	if(sign.equals("+")) {
+    		System.out.println("피연산자1 + 피연산자2 = " + (num1 + num2));
+    	} else if(sign.equals("-")) {
+    		System.out.println("피연산자1 - 피연산자2 = " + (num1 - num2));
+    	} else if(sign.equals("*")) {
+    		System.out.println("피연산자1 * 피연산자2 = " + (num1 * num2));
+    	} else if(sign.equals("/")) {
+    		System.out.println("피연산자1 / 피연산자2 = " + (num1 / num2));
+    	} else if(sign.equals("%")) {
+    		System.out.println("피연산자1 % 피연산자2 = " + (num1 % num2));
+    	} else {
+    		System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+    	}
+    		
     }
+    		
+    		
+    	
+    		
+    		
+    
 
     /*
       아래 예시와 같이 메뉴를 출력하고 메뉴 번호를 누르면 “OO메뉴입니다“를,
@@ -298,7 +336,38 @@ public class ConditionPractice {
         조회 메뉴입니다.
      */
     public void practice10() {
+    	
+    	System.out.println("1. 입력");
+    	System.out.println("2. 수정");
+    	System.out.println("3. 조회");
+    	System.out.println("4. 삭제");
+    	System.out.println("9. 종료");
+    	
 
+    	System.out.print("메뉴 번호를 입력하세요 : ");
+    	int num = sc.nextInt();
+    	
+    	switch(num) {
+    	case 1 : 
+    		System.out.println("입력 메뉴입니다.");
+    		break;
+    	case 2 : 
+    		System.out.println("수정 메뉴입니다.");
+    		break;
+    	case 3 :
+    		System.out.println("조회 메뉴입니다.");
+    		break;
+    	case 4 : 
+    		System.out.println("삭제 메뉴입니다.");
+    		break;
+    	case 9 :    		
+    		System.out.println("프로그램이 종료됩니다.");
+    		break;
+    		
+    		
+    		
+    	}
+    	
     }
 
     /*
@@ -348,7 +417,40 @@ public class ConditionPractice {
 
      */
     public void practice11() {
-        
+    	System.out.print("중간 고사 점수 : ");
+    	int score1 = sc.nextInt();
+    	System.out.print("기말 고사 점수 : ");
+    	int score2 = sc.nextInt();
+    	System.out.print("과제 점수 : ");
+    	int score3 = sc.nextInt();
+    	System.out.print("출석 횟수 : ");
+    	int score4 = sc.nextInt();
+    	
+    	System.out.println("===========결과===========");
+    	
+    	score1 = (score1 *= 0.2);
+    	score2 = (score2 *= 0.3);
+    	score3 = (score3 *= 0.3);
+    	
+    	
+    	// println 공통적으로 출력되는 부분들 아직 남아 있죠?
+    	// 예를 들어서 점수 미달 부분이랑 출석 횟수 부족! 요런 부분들 중첩 if문이랑 if문을 사용해보면 한번만 쓸 수 있게 바꿀 수 있어요!
+    	if((score1+score2+score3 >= 70 && (score4 >= 14 ))) {
+    		System.out.println("총점 : " + ((score1+score2+score3)+(score4 * 0.2)));
+    		System.out.println("PASS");
+    	} else if((score1+score2+score3 < 70 && (score4 >= 14 ))) {
+    		System.out.print("FAIL"+" [점수 미달]"+"(총점 : " + ((score1+score2+score3)+(score4 * 0.2)) + ")");
+       	} else if((score1+score2+score3 >= 70 && (score4 <= 14 ))) {
+    		System.out.print("FAIL"+" [출석 횟수 부족]"+"(출석 횟수 : " + score4 + "/20)");
+    	} else {
+    		System.out.println("FAIL"+" [출석 횟수 부족]"+"(출석 횟수 : " + score4 + "/20)");
+    		System.out.println("FAIL"+" [점수 미달]"+"(총점 : " + ((score1+score2+score3)+(score4 * 0.2)) + ")");
+    	}
+    		
     }
     
 }
+    		
+    		
+    		
+        
