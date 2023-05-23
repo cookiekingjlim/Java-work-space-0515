@@ -10,7 +10,8 @@ public class ArrayPractice {
 	public static void main(String[] args) {
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
-		ap.method2();
+//		ap.method2();
+		ap.method3();
 		
 	}
 
@@ -50,21 +51,25 @@ public class ArrayPractice {
 		int num = sc.nextInt();
 		int sum= 0;
 		
-		int[] arr = new int[num]; // num?5?
+		int[] arr = new int[5]; //5?
 		for(int i=0; i<arr.length; i++) {
 			System.out.print("배열"+i+"번째 인덱스에 넣을 값 : ");
 			arr[i] = sc.nextInt();
+			
 			sum += arr[i];
+			
 		}
-
-		System.out.print(sum+=arr[i].length);	
-
-//			
-//		}
-//
-//		
 	
+		System.out.println(Arrays.toString(arr));
+		System.out.println(sum);
+
 	}
+
+			
+		
+
+		
+	
 	
 	
 	/*
@@ -73,8 +78,33 @@ public class ArrayPractice {
 	 * 
 	 * */
 	public void method3() {
+		String[] menu = {"까눌레","마들렌","휘낭시에","스콘"}; //배열 선언과 초기화
 		
+		System.out.print("메뉴 입력 : ");
+		String name = sc.nextLine();
+		
+		for(int i = 0; i <menu.length; i++) { 
+//			System.out.println(menu[i]); // 까눌레 마들렌 휘낭시에 스콘
+			if(name.equals(menu[i])) { //메뉴랑 네임이 같으면........
+				System.out.println("배달 가능"); //얘까지는 나오는데
+			}else if(!name.equals(menu[i])) {
+				System.out.println("배달 불가능"); // 넌 왜에ㅔㅔㅔ 배달불가능 왜 여러개야ㅏㅏㅏ
+			}
+			
+		}
+
+		
+//		for(int i = 0; i<menu.length; i++) {
+//			if(menu.equals(name)){
+//				System.out.println(i);
+//			} else {
+//			}
+//
+//	}
+//		
 	}
+			
+		
 	
 	/*
 	 * 
