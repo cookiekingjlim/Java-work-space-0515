@@ -1,5 +1,6 @@
 package com.kh.loop;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class LoopPractice {
@@ -91,9 +92,14 @@ class LoopPractice {
         0
      */
     public void method4() {
+    	int num = (int)(Math.random()*10)+1;
+    		for(int i = num; i <=5; i++) {
+    			System.out.println(i);
+    			
+    		}
 
     }
-
+// }
     /*
         주사위를 10번 굴렸을 때 각 눈의 수가 몇 번 나왔는지 출력하세요. (random 사용! 범위 : 1~10)
 
@@ -138,8 +144,9 @@ class LoopPractice {
     public static void main(String[] args) {
 		LoopPractice lp = new LoopPractice();
 //		lp.method1();
-		lp.method2();
+//		lp.method2();
 //		lp.method3();
+		lp.method4();
 		
 	}
 }

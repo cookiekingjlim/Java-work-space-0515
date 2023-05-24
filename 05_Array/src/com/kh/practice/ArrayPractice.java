@@ -11,7 +11,8 @@ public class ArrayPractice {
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
 //		ap.method2();
-		ap.method3();
+//		ap.method3();
+		ap.method4();
 		
 	}
 
@@ -87,21 +88,12 @@ public class ArrayPractice {
 //			System.out.println(menu[i]); // 까눌레 마들렌 휘낭시에 스콘
 			if(name.equals(menu[i])) { //메뉴랑 네임이 같으면........
 				System.out.println("배달 가능"); //얘까지는 나오는데
-			}else if(!name.equals(menu[i])) {
-				System.out.println("배달 불가능"); // 넌 왜에ㅔㅔㅔ 배달불가능 왜 여러개야ㅏㅏㅏ
+			} else if(!name.equals(menu[i])) {
+				System.out.println(""); // 넌 왜에ㅔㅔㅔ 배달불가능 왜 여러개야ㅏㅏㅏ
 			}
 			
 		}
-
 		
-//		for(int i = 0; i<menu.length; i++) {
-//			if(menu.equals(name)){
-//				System.out.println(i);
-//			} else {
-//			}
-//
-//	}
-//		
 	}
 			
 		
@@ -112,10 +104,16 @@ public class ArrayPractice {
 	 * 단, 원본 배열은 건드리지 않고! 
 	 * 
 	 * 주민등록번호 : 123456-1234567
-	 * 123456-1******
-	 * 
-	 * */
-	public void method4() {
+	 * 123456-1****** 14글자...
+	 */
+
+
+	 public void method4() {
+		System.out.print("주민등록번호 : ");
+		int[] num = {sc.nextInt()};
+			for(int i=0; i>=9;i++) {
+				System.out.println("*");
+			}
 		
 	}
 	
