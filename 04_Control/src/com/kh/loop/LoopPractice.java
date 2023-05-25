@@ -28,24 +28,34 @@ class LoopPractice {
 
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
-    	int sum = 0;
-    	int num = 0;
+ 
+    
   
-    	
-    	while(true) {
-    		sum++;
-    	
-    		if(num % 2 != 0) { // 1,3,5,7,9...
-//				System.out.println(sum += i); // 1 = 1+0, 4 = 1+3, 9 = 4+5 // 홀수 더하기 완. 짝수는...?
-    		} else { //i = 짝수 2,4,6,8....
-	    		System.out.println(sum -= num); // sum = sum - 2,4,6,8...
+    	int i = 1;
+    	int sum = 0;
+    	while(sum <= 100) {
+    		i++;
+    		if(i += 2) {
+    			sum += i;
+    		} else if(i % 2 == 0){
+    			sum -= i;
     		}
-    		if(sum >= 100) { //우리 좋았잖아 왜 안 나와....ㅡ.ㅡ
-    			System.out.println(sum);
-    			break;
-    		}
+    		System.out.println();
     		
+    		
+
     	
+//    		if(num % 2 != 0) { // 1,3,5,7,9...
+//				System.out.println(sum += i); // 1 = 1+0, 4 = 1+3, 9 = 4+5 // 홀수 더하기 완. 짝수는...?
+//    		} else { //i = 짝수 2,4,6,8....
+//	    		System.out.println(sum -= num); // sum = sum - 2,4,6,8...
+//    		}
+//    		if(sum >= 100) { //우리 좋았잖아 왜 안 나와....ㅡ.ㅡ
+//    			System.out.println(sum);
+//    			break;
+//    		}
+//    		
+//    	
 		
     }
     
