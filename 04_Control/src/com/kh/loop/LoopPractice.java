@@ -29,44 +29,33 @@ class LoopPractice {
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
  
-    
-  
-    	int i = 1;
-    	int sum = 0;
-    	while(sum <= 100) {
+    	int i = 0;
+    	int sum = 0; //합계
+    	while(true) { //조건 합계가 100이 되기 전까지
     		i++;
-    		if(i += 2) {
-    			sum += i;
-    		} else if(i % 2 == 0){
-    			sum -= i;
+    		
+    		if(i % 2 != 0){					//조건 1 : i가 홀수일 때는 더해라 
+    	    	sum+=i;	
+    		} else if(i % 2 == 0) {			//조건 2 : i가 짝수일 때는 빼라 
+    			sum-=i;
+    		} if(sum >= 100) {
+    			break;
     		}
-    		System.out.println();
-    		
-    		
-
-    	
-//    		if(num % 2 != 0) { // 1,3,5,7,9...
-//				System.out.println(sum += i); // 1 = 1+0, 4 = 1+3, 9 = 4+5 // 홀수 더하기 완. 짝수는...?
-//    		} else { //i = 짝수 2,4,6,8....
-//	    		System.out.println(sum -= num); // sum = sum - 2,4,6,8...
-//    		}
-//    		if(sum >= 100) { //우리 좋았잖아 왜 안 나와....ㅡ.ㅡ
-//    			System.out.println(sum);
-//    			break;
-//    		}
-//    		
-//    	
-		
+//    		System.out.println(sum);	//조건1과 2를 더했을 때 결과는? 맞는 것 같기도 하고 아닌 것 같기도 하고...퉤
+    	}
+    	System.out.println(i);			// 몇까지 더해야 100이상이 되는가?
     }
-    
- }
+    		
+  
+    	
+
 
 
     /*
         사용자로부터 문자열을 입력 받고 문자열에서 검색될 문자를 입력 받아 해당 문자열에 그 문자가 몇 개 있는지 개수를 출력하세요. 
 
         문자열 : banana
-        문자 : a
+        문자 : a 
         banana 안에 포함된 a 개수 : 3
 
     */
@@ -78,21 +67,23 @@ class LoopPractice {
     	System.out.print("문자 : ");
     	char ch = sc.next().charAt(0);
     	
-    	for(int i = 0; i < str.length(); i++) {
+    	int count = 0; // 바깥에 셀 변수 설정
+    	
+    	for(int i = 0; i < str.length(); i++) { 
     		if(str.charAt(i) == ch) {
-    			System.out.println(str.charAt(i));	
+    			count++; // 문자열에서 문자가 i랑 일치할 때마다 개수 하나 증가
     		}
-//    		System.out.println(str.charAt(i));	
-//    		System.out.println(str + "안에 포함된" + ch +"의 개수: " + str.length(charAt(i));
 //    		엉엉 쌤 a 추출까지는 했는데 개수는 못 세겠어요ㅠㅠㅠㅠ
     	}
-    	
-    	
-    	
+  	
+    	System.out.println(str + "안에 포함된" + ch +"의 개수: " + count);
     }
-//-------------------4번부터는 내일 할게요ㅜㅜ
+    	
+    	
+    	
+//-------------------4번부터 어려워,,,응용이 안돼,,,난 똥멍청이야,,,,
     /*
-        0이 나올 때까지 숫자를 출력하시오. (random 사용!)
+        0이 나올 때까지 숫자를 출력하시오. (random 사용!) //사용 범위 들었는디...
         7
         3
         4
@@ -102,14 +93,22 @@ class LoopPractice {
         0
      */
     public void method4() {
-    	int num = (int)(Math.random()*10)+1;
-    		for(int i = num; i <=5; i++) {
-    			System.out.println(i);
-    			
-    		}
-
+    	int num = (int)(Math.random()*10+1);
+    	for(int i = 10; i >= 0; i--) {
+    		if
+    		System.out.println(i);
+    	}
+    	//----랜덤값을 넣고,,,포문으로 반복해서,,,if로 조건을 달아야할 것 같은데 
     }
-// }
+    		
+//    	int num = (int)(Math.random()*10+1);
+//    	for(int i = num; i >= 0; i--) {
+//    		System.out.println(i); //에엥 이렇게 하니까 정렬이 됐어...
+//    	}
+  
+
+    
+
     /*
         주사위를 10번 굴렸을 때 각 눈의 수가 몇 번 나왔는지 출력하세요. (random 사용! 범위 : 1~10)
 
@@ -122,7 +121,9 @@ class LoopPractice {
 
      */
     public void method5() {
-
+ 
+    	
+   
     }
 
     /*
