@@ -9,11 +9,10 @@ public class User { //아이디.비번...
 	private String nickName;
 	private char gender;
 
+	//사용자가 비디오를 가지는 포함관계
+	Video video;
 	
-	public User() {
-	}
-
-
+	public User() {}
 
 	public User(String email, String phone, String id, String password, String nickName, char gender) {
 		this.email = email;
@@ -23,7 +22,6 @@ public class User { //아이디.비번...
 		this.nickName = nickName;
 		this.gender = gender;
 	}
-	
 	
 
 	public String getEmail() {
