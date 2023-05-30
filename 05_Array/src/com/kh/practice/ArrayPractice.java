@@ -10,8 +10,8 @@ public class ArrayPractice {
 	public static void main(String[] args) {
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
-		ap.method2();
-//		ap.method3();
+//		ap.method2();
+		ap.method3();
 //		ap.method4();
 		
 	}
