@@ -10,9 +10,9 @@ public class ArrayPractice {
 	public static void main(String[] args) {
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
-//		ap.method2();
+		ap.method2();
 //		ap.method3();
-		ap.method4();
+//		ap.method4();
 		
 	}
 
@@ -23,8 +23,9 @@ public class ArrayPractice {
 	 * */
 	public void method1() {
 		String[] arr = {"딸기","복숭아","바나나","사과","망고"};
-		System.out.println("딸기");
-			 
+			for(int i = 0; i<arr.length;i++) {
+		}
+			System.out.println(arr[0]);
 		}
 		
 		
@@ -55,9 +56,9 @@ public class ArrayPractice {
 		int[] arr = new int[5]; //5?
 		for(int i=0; i<arr.length; i++) {
 			System.out.print("배열"+i+"번째 인덱스에 넣을 값 : ");
-			arr[i] = sc.nextInt();
+			arr[i] = sc.nextInt();			//나 이거..어케 풀었지.....?
 			
-			sum += arr[i];
+			sum += arr[i];	//sum = sum + arr[i]
 			
 		}
 	

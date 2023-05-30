@@ -73,7 +73,7 @@ class LoopPractice {
     		if(str.charAt(i) == ch) {
     			count++; // 문자열에서 문자가 i랑 일치할 때마다 개수 하나 증가
     		}
-//    		엉엉 쌤 a 추출까지는 했는데 개수는 못 세겠어요ㅠㅠㅠㅠ
+//    		엉엉 쌤 a 추출까지는 했는데 개수는 못 세겠어요ㅠㅠㅠㅠ ----> count로 잘 세고 계시는데요!
     	}
   	
     	System.out.println(str + "안에 포함된" + ch +"의 개수: " + count);
@@ -81,7 +81,7 @@ class LoopPractice {
     	
     	
     	
-//-------------------4번부터 어려워,,,응용이 안돼,,,난 똥멍청이야,,,,
+//-------------------4번부터 어려워,,,응용이 안돼,,,난 똥멍청이야,,,, ----> 전혀 아닙니다 ㅠㅠ 잘 하고 계시는데요!!
     /*
         0이 나올 때까지 숫자를 출력하시오. (random 사용!) //사용 범위 들었는디...
         7
@@ -93,20 +93,19 @@ class LoopPractice {
         0
      */
     public void method4() {
-    	int num = (int)(Math.random()*10+1);
-    	for(int i = 10; i >= 0; i--) {
-    		if
-    		System.out.println(i);
+    	//랜덤값을 넣고 while을 써서 조건을 0이 될 떄까지로 잡아야할 것 같은디.....
+    	while(true) {
+    		int num = (int)(Math.random()*11);	//0부터 10까지   ---> GOOD! 잘 하셨는걸요 :)
+    		if(num != 0) { //랜덤값은 잘 나오는데...
+    		} else if(num <= 0) { //0이 출력이 안돼.....캯  ----> 조건 걸어서 break 걸고 있잖아요! 
+    			                  // 이보다 출력하는 코드가 위에 있으면 0이 출력되고 종료!
+    			break;
+    		}
+    		System.out.println(num); 
     	}
-    	//----랜덤값을 넣고,,,포문으로 반복해서,,,if로 조건을 달아야할 것 같은데 
+    			
     }
-    		
-//    	int num = (int)(Math.random()*10+1);
-//    	for(int i = num; i >= 0; i--) {
-//    		System.out.println(i); //에엥 이렇게 하니까 정렬이 됐어...
-//    	}
-  
-
+    
     
 
     /*
@@ -121,11 +120,47 @@ class LoopPractice {
 
      */
     public void method5() {
- 
-    	
-   
-    }
-
+    	// 랜덤값 사용 주사위(1~6)-> 10번 반복했을 때-> 같은 수 찾기...equals는 안될 것 같고...
+    		int count = 0;
+    		for(int i=0; i<10; i++) {
+    			int dice = (int)(Math.random()*6)+1;
+    			System.out.println(dice);  // 10개의 랜덤값 ---> 랜덤값 10개가 이 안에서만 사용되고 있어요!
+    		
+    		// int dice로 해놓은 이 dice는 위에 반복문 안에서만 쓸 수 있는 변수로 지정해 놓은 상태!
+    		// 반복문 안에서 자꾸 돌아가고만 있어요!
+    			
+    			// 아래 반복문이 작동하지 않는 이유는 i가 지금 0인데 j가 0, i는 0 <---- 위에 코드랑 반복문 안에서 합쳐 보는 것부터!
+    
+    		for(int j=0; j<i;j++) {  // 위에 dice로 뺀 랜덤값 10개! 반복문 같이 써야 여기 코드랑 같이 쓸 수 있음!! 
+    			if(i == j) {
+    			j = count;
+    			}
+       			switch(count) {		// 증복값,,
+       			case 1 :
+       				System.out.println("1:" + count);
+       				break;
+       			case 2 :
+       				System.out.println("2:" + count);
+       				break;
+       			case 3 :
+       				System.out.println("3:" + count);
+       				break;
+       			case 4 :
+       				System.out.println("4:" + count);
+       				break;
+       			case 5 :
+       				System.out.println("5:" + count);
+       				break;
+       			case 6:
+       				System.out.println("6:" + count);
+       				break;
+        				
+    		}
+    	}
+ 	}
+  }
+   //------------------- 시묽,,,,---------------------------------------- 
+  
     /*
         사용자의 이름을 입력하고 컴퓨터와 가위바위보를 하세요. 
         컴퓨터가 가위인지 보인지 주먹인지는 랜덤한 수를 통해서 결정하도록 하고, 사용자에게는 직접 가위바위보를 받으세요.
@@ -149,7 +184,41 @@ class LoopPractice {
         이겼습니다 !
     */
     public void method6() {
-
+    	// 랜덤으로 1,2,3 -> 1은 가위 2는 바위 3은 보...에바ㅠ 와일이랑 이퀄스..?
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.nextLine();
+    
+    	
+    	while(true) { //사용자가 이길 때까지 가위바위보 반복
+    		int computer = (int)(Math.random()*3)+1;
+    		int count = 0; // 횟수
+    		int draw = 0;
+    		int lose = 0;
+    		int win = 0;
+//    		count++;
+    		
+    		System.out.println("1. 가위 | 2. 바위 | 3. 보");		//이퀄스 퉤 ---> 많이 보게 되므로 너무 싫어하진 말아요 ㅋㅋㅋㅋㅋ
+    		System.out.println("가위바위보 숫자를 입력하세요");
+    		System.out.print(name + ":");
+    		int input = Integer.parseInt(sc.nextLine());
+    		System.out.println("컴퓨터 : " + computer);
+    		
+    		if((computer==1 && input==1) || (computer == 2 && input == 2) || (computer == 3 && input == 3)) {
+    			draw++;
+    			System.out.println("비겼습니다.");
+    		}else if((computer==1 && input==3) || (computer == 2 && input == 1) || (computer == 3 && input == 2)){
+    			lose++;
+    			System.out.println("졌습니다.");
+    		}else {
+    			win++;
+    			System.out.println("이겼습니다.");
+    			System.out.println(draw+"번 비겼고, "+lose+"번 졌고,"+win+"번 이겼습니다."); // 얘는...어쩌지...어디에 놔야하지....와일문 안에 넣어야하는디.. 
+    			                                                         // --> 마지막으로 한번만 출력하면 되니까 굳이 while문 안에 있지 않아도 됩니다!
+    			break; //이기면 멈추기
+    		}
+    		System.out.println("");
+    	}
+    	
     }
 
     public static void main(String[] args) {
@@ -157,7 +226,9 @@ class LoopPractice {
 //		lp.method1();
 //		lp.method2();
 //		lp.method3();
-		lp.method4();
+//		lp.method4();
+		lp.method5();
+		lp.method6();
 		
 	}
 }
