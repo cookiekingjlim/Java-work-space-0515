@@ -13,3 +13,4 @@ public interface CommentImpl {
 		public void updateComment(int index, Comment comment);
 		//D : 댓글 삭제 --> 로그인한 회원과 이 댓글을 작성한 작성자가 일치
 		public void deleteComment(int index);
+}
