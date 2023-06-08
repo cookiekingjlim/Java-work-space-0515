@@ -21,12 +21,11 @@ public class FarmController {
 		// 존재할 경우 false 반환
 				
 		//전달 받은 f가 존재하는지 아닌지 찾아야...?
-			if(!(hMap.containsKey(f))) {
-				Set<Entry<Farm,Integer>> entrySet = hMap.entrySet();
+			if(!hMap.containsKey(f)) {
+				hMap.put(f, amount);
 				return true;
-			} else {
-				return false;
 			}
+			return false;
 
 	}
 	
@@ -40,24 +39,21 @@ public class FarmController {
 		if(hMap.containsKey(f)) {
 			hMap.remove(f);
 			return true;
-		} else {
-			return false;
 		}
-
+		return false;
 	}
 	
-	public boolean changeAmount(Farm f, int amount) {
+	public boolean changeAmount(Farm f, int amount) {	//수량 바꾸는 메소드
 		
 		// 전달 받은 f가 hMap 안에 key로 존재할 때 
 		// f와 amount 저장 후 true 반환
 		// 존재하지 않을 경우 false 반환
 		
 		if(hMap.containsKey(f)) {
-			Set<Entry<Farm,Integer>> entrySet = hMap.entrySet();
+			hMap.put(f, amount);
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 		
 	}
 	
@@ -73,9 +69,10 @@ public class FarmController {
 		// list에 f 추가, 그리고 hMap에 f 수량 1 감소, true 반환
 		
 		// 존재하지 않으면 false 반환
-		int numOf = 0;
-		if(hMap.containsKey(f)) {
-			hMap.put(f, 1);
+		if(hMap.containsKey(f) && hMap.get(f) > 0 ) {	// get => f의 수량 value가져오는 것
+			list.add(f);
+			hMap.put(f, hMap.get(f)-1);	// hMap의 수량 한 개 감소
+			return true;
 		}
 
 		return false;
@@ -88,6 +85,11 @@ public class FarmController {
 		
 		// 아니면 false 반환
 		
+		if(list.contains(f)) {
+			list.remove(f);
+			hMap.put(f, hMap.get(f)+1);
+			return true;
+		}
 		return false;
 	}
 	
