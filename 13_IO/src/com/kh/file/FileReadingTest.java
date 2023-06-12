@@ -24,11 +24,11 @@ public class FileReadingTest {
 
 	public static void main(String[] args) {
 		FileReadingTest f = new FileReadingTest();
-		//f.fileSave();
-		//f.fileread();
-	    //f.method1(); //한줄씩
-		//f.method2(); //다른 파일로 출력!
-		f.method3();
+		f.fileSave();
+//		f.fileread();
+//	    f.method1(); //한줄씩
+//		f.method2(); //다른 파일로 출력!
+//		f.method3();
 	}
 	
 	public void fileSave() {
