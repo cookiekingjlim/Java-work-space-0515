@@ -1,5 +1,6 @@
 package com.kh.time;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,7 +25,7 @@ public class A_Date {
 	 * */
 	public void method1() {
 		//기본 생성자로 객체를 생성하면 현재 시스템의 시간에 대한 정보를 가지고 객체 생성
-		Date today	= new Date();//-> java.util 가져와야
+		Date today	= new Date();//-> java.util 가져와야, 이 형타입을 자주 사용함 캘린더는 잘 안 씀
 		System.out.println(today);
 		
 		//1970년 1월 1일 00시 -> 한국 표준시간(KST)으로 출력될 땐 그리니치 평균시(GMT)보다 +9 증가된 시간으로 표시
@@ -146,28 +147,37 @@ public class A_Date {
 	//입력된 형식이 잘못된 경우 다시 입력받기
 	public void practice() {
 		Scanner sc = new Scanner(System.in);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Date result = null;
+
+		while(true) {
 		System.out.print("생일을 입력해주세요(yyyy/MM/dd): ");
-		String birthday = sc.nextLine();
+		String data = sc.nextLine();
+		try {
+			result = sdf.parse(data);	//-> 해당하는 스트링을 해당하는 날짜로 변환해주는 것
+			break;	//-> 이 형태로 작성 안 하면 catch로 감 -> 반복
+		} catch (ParseException e) {
+		}	
+		}
+		Calendar inputDate = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
 		
-		Calendar birth = Calendar.getInstance();
-		birth.set(birthday); 
+		inputDate.setTime(result);
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("E요일");
-		String formatDate = sdf.format(birth);
-		System.out.println("태어난 해의 요일: "+ formatDate);
-		long timeInMillis = birth.getTimeInMillis();
-		long day = timeInMillis / 86400;
-		System.out.println("생일로부터 지난 날짜: " + day);
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd는 E요일입니다.");
+		System.out.println(sdf2.format(result));
+		
+		long day = (today.getTimeInMillis() - inputDate.getTimeInMillis())/(1000 * 24 * 60 *60);
+		System.out.println("태어난 날부터 지금까지" + day + "일 지났습니다.");
+		}
 		
 		
-	}
+
 	
 	
 	
 	
+	}	
 	
 	
-	
-	
-	
-}
+
