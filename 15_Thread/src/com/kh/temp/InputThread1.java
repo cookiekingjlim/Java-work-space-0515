@@ -1,4 +1,4 @@
-package com.kh.step4;
+package com.kh.temp;
 
 public class InputThread1 implements Runnable {
 

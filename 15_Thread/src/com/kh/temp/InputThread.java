@@ -1,4 +1,4 @@
-package com.kh.step4;
+package com.kh.temp;
 
 import javax.swing.JOptionPane;
 
