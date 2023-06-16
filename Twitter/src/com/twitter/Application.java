@@ -35,13 +35,6 @@ public class Application {
 		System.out.print("생년월일(예: 20230615): ");
 		String birth = sc.nextLine();
 		
-		Map<String, String> user = new HashMap<>();
-		user.put("이름", name);
-		user.put("휴대폰 번호", phoneNumb);
-//		user.put("이메일", email);
-		user.put("생년월일", birth);
-	
-		uc.signUp1(user);
 		
 		
 	}
@@ -53,5 +46,5 @@ public class Application {
 		String password = sc.nextLine();
 	
 		
-}
+	}
 }

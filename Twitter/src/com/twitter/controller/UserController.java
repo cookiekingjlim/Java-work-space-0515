@@ -14,22 +14,17 @@ public class UserController {
 	
 	HashMap<String, User> user = new HashMap<>();		
 	
-	//회원가입->이름, 휴대폰 번호나 이메일, 생년월일 ->아이디 입력
+	//회원가입->이름, 휴대폰 번호나 이메일, 생년월일 ->아이디 입력 ->은 걍 편하게 바꾸자^^!
 	//회원가입->구글,애플로 가입->생년월일 입력
-	public void signUp1(Map<String, String> user) {
-		String name = user.get("이름");
-		String phoneNumb = user.get("휴대폰 번호");
-		String birth = user.get("생년월일");
-	}
-	
-	//핸드폰 인증해서 동일한 번호가 없으면 아이디랑 비번 생성;;
-	public boolean signUp2(String phoneNumb, String id,User u) {
+	public void signUp1(String id, String phoneNumb, String password, String birth, String name) {
+		user.put(id, new User(phoneNumb, password , birth, name));
 		if(!user.containsKey(phoneNumb)) {
-			user.put(id, u);
+			user.put(id, );
 			return true;
-		}
-		return false;
+	
 	}
+		return false;
+	
 	
 	public boolean login(String id, String password) {
 		return false;
