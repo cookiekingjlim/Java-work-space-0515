@@ -1,4 +1,4 @@
-package co.kh.practice;
+package com.kh.practice;
 
 import java.util.Scanner;
 
@@ -65,28 +65,39 @@ public class OperatorPractice {
 		System.out.println((num % 2 == 0) ? "짝수이다." : "홀수이다.");
 		
 	}
-	
+	//2023-06-17
 	public void method5() { // num > 13은 불필요한 코드 조건문 배우고 코드 체크
 		Scanner sc = new Scanner(System.in);
-		
 		System.out.print("나이 : ");
-		int num = sc.nextInt();
-		
-		System.out.println ((num <= 13) ? "어린이다." : (num > 13) && (num <= 19) ? "청소년이다." : "어른이다.");
-	
+		int age = sc.nextInt();
+		if(age > 13 && age >= 19) {
+			System.out.println("청소년입니다.");
+		} else if(age > 19) {
+			System.out.println("성인입니다.");
+		} else {
+			System.out.println("어린이입니다.");
+		}
 	}
 	
+	//2023-06-17
 	public void method6() { // 이렇게 되면 사과가 100개, 바구니의 개수가 10개일 때 답이 잘못될거에요!
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("사과의 개수 : ");
-		int num1 = sc.nextInt();
+		System.out.print("사과의 개수: ");
+		int apple = sc.nextInt();
 		
-		System.out.print("바구니의 개수 : ");
-		int num2 = sc.nextInt();
+		System.out.print("바구니의 개수: ");
+		int basket = sc.nextInt();
 		
-		int num3 = num1/num2;
-		System.out.print("필요한 바구니의 개수 : " + ++num3);
+		int basketcount= apple/basket;
+		int num = apple%basket;
+		
+		if(num != 0) {
+			basketcount++;
+		}
+		
+		System.out.println("필요한 바구니의 개수: " +  basketcount);
+		
 	}
 	
 }

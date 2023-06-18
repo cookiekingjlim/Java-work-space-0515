@@ -1,4 +1,4 @@
-package com.kh.condition;
+package com.kh.practice;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class ConditionPractice {
 	ConditionPractice cp = new ConditionPractice();
 //	cp.practice1();
 //	cp.practice2();
-//	cp.practice3();
+	cp.practice3();
 //	cp.practice4();
 //	cp.practice5();
 //	cp.practice6();
@@ -17,7 +17,7 @@ public class ConditionPractice {
 //	cp.practice8();
 //	cp.practice9();
 //	cp.practice10();
-	cp.practice11();
+//	cp.practice11();
 	
 }
     /*
@@ -28,18 +28,23 @@ public class ConditionPractice {
        숫자를 한 개 입력하세요 : -8
        양수만 입력해주세요.
      */
+	
+//	2023-06-18
     public void practice1() {
         System.out.print("숫자를 한 개 입력하세요 : ");
         int num = sc.nextInt();
         
-        if(num > 0 && (num % 2 == 0)) { // num > 0 공통적으로 들어가는 부분 중첩 if문으로 바깥으로 뺄 수 있어요!
+        if(num > 0) {
+          if(num % 2 == 0) { // num > 0 공통적으로 들어가는 부분 중첩 if문으로 바깥으로 뺄 수 있어요!
         	 System.out.print("짝수다");
-        } else if (num > 0 && (num % 2 == 1)) {
+        } else {
         	System.out.print("홀수다");
+        }
         } else {
         	System.out.print("양수만 입력해주세요.");
-        }
-    }
+     }
+   
+  }
 
     /*
         정수 num1과 num2가 매개변수로 주어진다. 두 수가 같으면 1 다르면 -1을 출력하세요.
@@ -52,6 +57,8 @@ public class ConditionPractice {
         num2 : 11
         1
      */
+    
+//    2023-6-18
     public void practice2() {
     	
     	// 문제에 처음보는 단어인 매개변수... 제가 코딩테스트 문제 중에도 참고한 게 있는데..
@@ -59,10 +66,12 @@ public class ConditionPractice {
     	// 참고로 매개변수는 객체 - 메소드 설명할 때 자세히 다루게 될 예정이구요!
     	// 사실 이 문제는 두 정수 값을 받아서 일치하면 1 다르면 -1을 출력하는 문제입니다!
     	
-    	int num1 = 2;
-    	int num2 = 3;
-    	System.out.println("num1 : " + num1);
-		System.out.println("num2 : " + num2);
+    	Scanner sc = new Scanner(System.in);
+    	
+    	System.out.print("num1 : ");
+    	int num1 = sc.nextInt();
+    	System.out.print("num2 : ");
+    	int num2 = sc.nextInt();
 	
 		 if(num1 == num2) {
             System.out.println("1");
@@ -70,18 +79,7 @@ public class ConditionPractice {
         	System.out.println("-1");
         }
     		
-		 // 요 아래 코드는 필요 없어요~ 지우님!
-		final int NUM1 = 11;
-		final int NUM2 = 11;
-		System.out.println("num1 : " + NUM1);
-		System.out.println("num2 : " + NUM2);
-		
-		 if(NUM1 == NUM2) {
-	            System.out.println("1");
-	        } else if(NUM1 != NUM2) {
-	        	System.out.println("-1");
-	        }
-    	}
+	 }
         
 
     /*
@@ -94,19 +92,23 @@ public class ConditionPractice {
         2
 
      */
+//  2023-6-18
     public void practice3() {
     	System.out.print("피자 조각 수 : " );
-    	int num1 = sc.nextInt();
+    	int pices = sc.nextInt();
         
     	System.out.print("피자 먹는 사람 수 : " );
-    	int num2 = sc.nextInt();
+    	int people = sc.nextInt();
     	
-    	int num3 = num2/num1; // 여기까지는 OK~~
+    	int NumberOfPizzas = people/pices; // 여기까지는 OK~~
+    	int num = people%pices;
+    	if(num != 0) {
+    		NumberOfPizzas++;
+    	}
+    	
+    	System.out.print(NumberOfPizzas);
     	
     	// 여러가지 예시를 생각해보세요! 위에 예시 말고 피자 조각 수가 4조각인데, 사람 수는 8명일 때 등등!
-    	if(num1 <= 10) {
-    		System.out.print(++num3);
-    	}
    	}
     
     
@@ -214,6 +216,7 @@ public class ConditionPractice {
       비밀번호 : 1234
       아이디가 틀렸습니다.
     */
+//  2023-6-18
     public void practice7() {
     	String id = "";
     	int pw = 0;
@@ -224,18 +227,30 @@ public class ConditionPractice {
     	pw = sc.nextInt();
     	
     	// 조건식에서 자꾸만 공통적으로 쓰게 되는 부분들 작성하고 보니 보이죠? 그럴때 중첩 if문을 써서 바깥으로 빼보세요!
-    	if("happy".equals(id) && pw == 1234) {
-    		System.out.println("로그인 성공!");
-    	}
-    	if(!"happy".equals(id)&& pw == 1234) {
-    		System.out.println("아이디가 틀렸습니다.");
-    	}
-    	if("happy".equals(id) && pw != 1234) {
-    		System.out.println("비밀번호가 틀렸습니다.");
-    	}
-    	if(!"happy".equals(id) && pw != 1234) {
-    		System.out.println("아이디와 비밀번호를 다시 확인해주십시오.");
-    	}
+    	
+        if ("happy".equals(id)) {
+            if (pw == 1234) {
+                System.out.println("로그인 성공!");
+            } else {
+                System.out.println("비밀번호가 틀렸습니다.");
+            }
+        } else {
+            System.out.println("아이디가 틀렸습니다.");
+        }
+    	
+    	
+//    	if("happy".equals(id) && pw == 1234) {
+//    		System.out.println("로그인 성공!");
+//    	}
+//    	if(!"happy".equals(id)&& pw == 1234) {
+//    		System.out.println("아이디가 틀렸습니다.");
+//    	}
+//    	if("happy".equals(id) && pw != 1234) {
+//    		System.out.println("비밀번호가 틀렸습니다.");
+//    	}
+//    	if(!"happy".equals(id) && pw != 1234) {
+//    		System.out.println("아이디와 비밀번호를 다시 확인해주십시오.");
+//    	}
   }
 
     /*

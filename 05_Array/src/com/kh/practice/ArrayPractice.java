@@ -10,8 +10,8 @@ public class ArrayPractice {
 	public static void main(String[] args) {
 		ArrayPractice ap = new ArrayPractice();
 //		ap.method1();
-//		ap.method2();
-		ap.method3();
+		ap.method2();
+//		ap.method3();
 //		ap.method4();
 		
 	}
@@ -48,22 +48,35 @@ public class ArrayPractice {
 	 * 2
 	 * */
 	public void method2() {
-	
-		System.out.print("정수 : ");
-		int num = sc.nextInt();
-		int sum= 0;
 		
-		int[] arr = new int[5]; //5?
-		for(int i=0; i<arr.length; i++) {
-			System.out.print("배열"+i+"번째 인덱스에 넣을 값 : ");
-			arr[i] = sc.nextInt();			//나 이거..어케 풀었지.....?
-			
-			sum += arr[i];	//sum = sum + arr[i]
-			
+		System.out.print("정수: ");
+		int input = sc.nextInt();
+		int sum = 0;
+		
+		int[] arr = new int[input];
+		for(int i = 0; i<input; i++) {
+			System.out.print("배열"+i+"번째 인덱스에 넣을 값: ");
+			arr[i] = sc.nextInt();
+			sum += arr[i];
 		}
-	
 		System.out.println(Arrays.toString(arr));
 		System.out.println(sum);
+	
+//		System.out.print("정수 : ");
+//		int num = sc.nextInt();
+//		int sum= 0;
+//		
+//		int[] arr = new int[5]; //5?
+//		for(int i=0; i<arr.length; i++) {
+//			System.out.print("배열"+i+"번째 인덱스에 넣을 값 : ");
+//			arr[i] = sc.nextInt();			//나 이거..어케 풀었지.....?
+//			
+//			sum += arr[i];	//sum = sum + arr[i]
+//			
+//		}
+//	
+//		System.out.println(Arrays.toString(arr));
+//		System.out.println(sum);
 
 	}
 

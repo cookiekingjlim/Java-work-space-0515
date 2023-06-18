@@ -1,4 +1,4 @@
-package com.kh.loop;
+package com.kh.practice;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -92,23 +92,33 @@ class LoopPractice {
         4
         0
      */
+    //2023-06-18
     public void method4() {
+    	
+    	
     	//랜덤값을 넣고 while을 써서 조건을 0이 될 떄까지로 잡아야할 것 같은디.....
-    	while(true) {
-    		int num = (int)(Math.random()*11);	//0부터 10까지   ---> GOOD! 잘 하셨는걸요 :)
-    		if(num != 0) { //랜덤값은 잘 나오는데...
-    		} else if(num <= 0) { //0이 출력이 안돼.....캯  ----> 조건 걸어서 break 걸고 있잖아요! 
-    			                  // 이보다 출력하는 코드가 위에 있으면 0이 출력되고 종료!
-    			break;
-    		}
-    		System.out.println(num); 
-    	}
-    			
-    }
+		while (true) {
+			int num = (int) (Math.random() * 11); // 0부터 10까지 ---> GOOD! 잘 하셨는걸요 :)
+			System.out.println(num);
+			if(num == 0 ) {
+				break;
+			}
+//			if (num != 0) { // 랜덤값은 잘 나오는데...
+//			} else if (num <= 0) { // 0이 출력이 안돼.....캯 ----> 조건 걸어서 break 걸고 있잖아요!
+//									// 이보다 출력하는 코드가 위에 있으면 0이 출력되고 종료!
+//			}
+//			break;
+		}
+
+	}
     
     
 
-    /*
+    private char[] random(int i) {
+		return null;
+	}
+
+	/*
         주사위를 10번 굴렸을 때 각 눈의 수가 몇 번 나왔는지 출력하세요. (random 사용! 범위 : 1~10)
 
         1 : 3
@@ -226,9 +236,9 @@ class LoopPractice {
 //		lp.method1();
 //		lp.method2();
 //		lp.method3();
-//		lp.method4();
-		lp.method5();
-		lp.method6();
+		lp.method4();
+//		lp.method5();
+//		lp.method6();
 		
 	}
 }

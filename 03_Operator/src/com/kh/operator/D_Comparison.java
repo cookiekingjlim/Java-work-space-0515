@@ -14,7 +14,7 @@ public class D_Comparison {
 	 * a == b : a와 b가 같은가?
 	 * a != b : a와 b가 같지 않은가?
 	 * 
-	 * - 비교 연산의 조건을 만족하면 trure, 만족하지 않으면 false를 반환한다.
+	 * - 비교 연산의 조건을 만족하면 true, 만족하지 않으면 false를 반환한다.
 	 * 
 	 * */
 	

@@ -64,6 +64,33 @@ public class User {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
+
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", email=" + email + ", phone=" + phone + ", id=" + id + ", password=" + password
+				+ ", nickName=" + nickName + ", birth=" + birth + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(birth, email, id, name, nickName, password, phone);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(birth, other.birth) && Objects.equals(email, other.email) && Objects.equals(id, other.id)
+				&& Objects.equals(name, other.name) && Objects.equals(nickName, other.nickName)
+				&& Objects.equals(password, other.password) && Objects.equals(phone, other.phone);
+	}
+
+
 	
 	
 	

@@ -11,9 +11,9 @@ public class VariablePractice {
 		
 		VariablePractice vp = new VariablePractice();
 //		vp.method1();
-		vp.method2();
+//		vp.method2();
 //		vp.method3();
-//		vp.method4();
+		vp.method4();
 //		vp.method5();
 //		vp.method6();
 	}
@@ -55,55 +55,52 @@ public class VariablePractice {
 		System.out.println("총 금액 : " + ((num1*2) + (num2*3)) + "원");
 	}
 	
-
+	//2023-06-17
 	public void method3() { //다른 임시변수 만들어서 사용할 수 있음. 나중에 연습해봐
 		int x = 5;
 		int y = 7;
 		int z = 9;
 		
-		final int X;
-		x = 7;
-		final int Y;
-		y = 9;
-		final int Z;
-		z = 5;
+		System.out.println("전");
+		System.out.println("x=" + x);
+		System.out.println("y=" + y);
+		System.out.println("z=" + z);
 		
+		int tmp = x; // 5
+		x = y; //7
+		y = z; //9
+		z =	tmp;	
 		
+		System.out.println("후");
 		System.out.println("x=" + x);
 		System.out.println("y=" + y);
 		System.out.println("z=" + z);
 	}
 	
 	
-	
+	//2023-06-17 
 	public void method4() {
 		
 		Scanner sc = new Scanner(System.in);
-		
 		System.out.print("문자열을 입력하세요 : "); 
 		String str = sc.nextLine();
-		char ch1 = str.charAt(0);
-		System.out.println("첫번째 문자 : " + ch1);
-		char ch2 = str.charAt(7);
-		System.out.println("마지막 문자 : " + ch2);
+		System.out.println("첫번째 문자 : " + str.charAt(0));
+		System.out.println("마지막 문자 : " + str.charAt(str.length()-1));
 		
+		
+		
+		
+//		
 		//쌤 이거 우당탕탕 얼레벌레 돌아가기는 하는데...이해를 기반으로 푼 게 아니라 이것저것 다 집어넣다 보니까 어떻게 비슷하게 나왔어요..ㅎ..
 		
 	}
-	
+	//2023-06-17
 	public void method5() { //입력받은 값을 이용하는 것
 		Scanner sc = new Scanner(System.in);
-		
-//		System.out.print("문자 : ");
-//		String str = sc.next();
-//		int num1 = 'A';
-//		System.out.println("A unicode : " + num1);
-//		int num2 = 'B';
-//		System.out.println("B unicode : " + num2);
-		
 		System.out.print("문자 : ");
-		char ch = sc.next();
-	}
+		char ch = sc.next().charAt(0);
+		System.out.println(ch + " 유니코드: " + (int)ch);
+		}
 	
 	public void method6() {
 		Scanner sc = new Scanner(System.in);

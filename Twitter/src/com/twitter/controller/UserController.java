@@ -40,13 +40,28 @@ public class UserController {
 	}
 	
 	//로그인 된 경우 ->패스워드 입력-> 프로필 수정,,꼭 해야겟니,,,,
-	//프로필 수정: 비밀번호 변경, 자기소개 입력, 프로필 사진(안해)
-	public boolean updateProfile(String id) {
-		if(!user.containsKey(id)) {
+	//프로필 수정: 비밀번호 변경, 닉네임 변경, 자기소개, 프로필 사진(안할래)
+	public boolean chagePassword(String id, String oldPw, User newPw) {
+		if(user.containsKey(id) && user.get(id).getPassword().equals(oldPw)) {
+			user.put(id,newPw);
+			return true;
 		}
 		return false;
 }
 	
+	public boolean changeName(String id, User newName) {	// 왜 자꾸 오류나ㅡㅡ
+		if(user.containsKey(id)){
+			user.put(id, newName);
+			return true;
+		}
+		return false;
+	}
+	
+	public void updateProfile(String id, User introduction) {
+		if(user.containsKey(id)) {
+			user.put(id, introduction);
+		}
+	}
 
 	
 	public void deleteProfile(String id) {
